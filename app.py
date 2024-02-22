@@ -10,9 +10,9 @@ st.header("holi")
 st.markdown("*juan*")
 
 df = pd.read_csv('train.csv')
-st.dataframe(df, columns=["Survived"])
+st.dataframe(df)
 
-chart_data = pd.DataFrame(df)
+chart_data = pd.DataFrame(df, columns=["Survived"])
 
 st.bar_chart(chart_data)
 
