@@ -12,7 +12,7 @@ st.markdown("*juan*")
 df = pd.read_csv('train.csv')
 st.dataframe(df)
 
-chart_data = pd.DataFrame(df, columns=["a"])
+chart_data = pd.DataFrame(df)
 
 st.bar_chart(chart_data)
 
