@@ -13,4 +13,4 @@ st.dataframe(df)
 
 chart_data = pd.df(columns=["Survived"])
 
-st.bar_chart(x=chart_data)
+st.bar_chart(chart_data)
