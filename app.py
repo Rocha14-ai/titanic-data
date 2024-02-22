@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 st.title("""
 HOLA MUNDO
 hola hola hola
@@ -11,4 +12,13 @@ st.markdown("*juan*")
 df = pd.read_csv('train.csv')
 st.dataframe(df)
 
-df['Pclass'].plot(kind='hist')
+grp= df.groupby("Survived")
+fig, ax = plt.subplots(figsize(8,6))
+for grp_name, grp_data in grp:
+  ax.hist(grp_data["Survived"], bins=2, alpha=0.5 label=str(grp_name)
+
+ax.set_title('Survivors')
+ax.set_xlabel("0 no sobrevivientes, 1 sobrevivientes")
+ax.legend()
+st.pyplot(fig)
+
