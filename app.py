@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-echo "backend: TkAgg" >> ~/.matplotlib/matplotlibrc
+get_backend(echo "backend: TkAgg" >> ~/.matplotlib/matplotlibrc)
 
 st.title("""
 HOLA MUNDO
