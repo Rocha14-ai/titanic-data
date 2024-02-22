@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+echo "backend: TkAgg" >> ~/.matplotlib/matplotlibrc
 
 st.title("""
 HOLA MUNDO
@@ -16,3 +17,13 @@ chart_data = pd.DataFrame(df, columns=["Survived"])
 
 st.bar_chart(chart_data)
 
+
+grp= df.groupby("Survived")
+fig, ax = plt.subplots(figsize(8,6))
+for grp_name, grp_data in grp:
+  ax.hist(grp_data["Survived"], bins=2)
+
+ax.set_title('Survivors')
+ax.set_xlabel("0 no sobrevivientes, 1 sobrevivientes")
+ax.legend()
+st.pyplot(fig)
