@@ -1,4 +1,5 @@
 import streamlit as st
+import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 st.title("""
@@ -11,6 +12,4 @@ st.markdown("*juan*")
 df = pd.read_csv('train.csv')
 st.dataframe(df)
 
-chart_data = pd.df(columns=["Survived"])
-
-st.bar_chart(chart_data)
+df['Pclass'].plot(kind='hist')
