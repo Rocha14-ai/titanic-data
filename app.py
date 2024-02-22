@@ -15,7 +15,7 @@ st.dataframe(df)
 
 chart_data = pd.DataFrame(
    {
-       "col1": df["Survivors"]
+       "col1": df["Survived"]
 
    }
 )
