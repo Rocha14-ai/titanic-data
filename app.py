@@ -18,7 +18,7 @@ st.bar_chart(chart_data)
 
 
 grp= df.groupby("Survived")
-fig, ax = plt.subplots(figsize(8,6))
+
 for grp_name, grp_data in grp:
   ax.hist(grp_data["Survived"], bins=2)
 
