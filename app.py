@@ -16,7 +16,7 @@ st.dataframe(df)
 
 option = st.selectbox(
     'Elije de la columna',
-    ('Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Embarked))
+    ('Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Embarked'))
 
 st.write('You selected:', option)
 
