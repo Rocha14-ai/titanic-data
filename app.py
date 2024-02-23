@@ -17,7 +17,7 @@ number1=number-1
 if number==0:
 
     def highlight_survived_row(row):
-        color = 'lightgreen' if row['Survived'] == 1 else 'white'
+        color = 'green' if row['Survived'] == 1 else 'red'
         return [f'background-color: {color}'] * len(row)
 
     styled_df = df.style.apply(highlight_survived_row, axis=1)
