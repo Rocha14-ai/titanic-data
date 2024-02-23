@@ -15,7 +15,10 @@ number = int(st.number_input("Insert a number", value=None, placeholder="Type a 
 st.write('The current index is ', number)
 number1=number-1
 if number==0:
-    st.dataframe(df)
+    st.dataframe(df,   if df['Survived']==1:  column_config={
+        "stars": st.column_config.NumberColumn(
+            format="%d ⭐",
+        )})
 else:
     st.dataframe(df.iloc[number1:number])
 
