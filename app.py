@@ -15,7 +15,9 @@ number = int(st.number_input("Insert a number", value=None, placeholder="Type a 
 st.write('The current index is ', number)
 number1=number-1
 if number==0:
-    st.dataframe(df.style.highlight_subset(subset=df[df['Survived'] == 1].index))
+    styled_df = df[df['Survived'] == 1].style.highlight_subset(subset=['Survived'], color='lightgreen')
+
+    st.dataframe(styled_df)
 else:
     st.dataframe(df.iloc[number1:number])
 
