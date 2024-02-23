@@ -10,24 +10,29 @@ Este es un dataset del titanic
 
 df = pd.read_csv('train.csv')
 st.write('Introduce el PassengerId o usa 0 para ver a todos')
-number = int(st.number_input("Insert a number", value=None, placeholder="Type a number..."))
-st.write('The current index is ', number)
-number1=number-1
+number = st.number_input("Insert a number", value=None, placeholder="Type a number...")
 
-def tabla(number=1):
-    if number==0:
+if number is not None:
+    st.write('The current index is ', number)
+    number1 = int(number) - 1
 
-        def highlight_survived_row(row):
-            color = 'green' if row['Survived'] == 1 else 'red'
-            return [f'background-color: {color}'] * len(row)
+    def tabla(number=1):
+        if number == 0:
+            def highlight_survived_row(row):
+                color = 'green' if row['Survived'] == 1 else 'red'
+                return [f'background-color: {color}'] * len(row)
 
-        styled_df = df.style.apply(highlight_survived_row, axis=1)
+            styled_df = df.style.apply(highlight_survived_row, axis=1)
 
-        st.dataframe(styled_df)
-    else:
-        st.dataframe(df.iloc[number1:number])
+            st.dataframe(styled_df)
+        else:
+            st.dataframe(df.iloc[number1:number])
 
-tabla(number)
+    tabla(number)
+else:
+    st.write('Please enter a number')
+
+
 option = st.selectbox(
     'Elije de la columna',
     ('Survived', 'Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Embarked'))
