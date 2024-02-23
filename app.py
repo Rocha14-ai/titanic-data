@@ -14,7 +14,10 @@ st.write('Introduce el PassengerId')
 number = int(st.number_input("Insert a number", value=None, placeholder="Type a number..."))
 st.write('The current index is ', number)
 number1=number-1
-st.dataframe(df.iloc[number1:number])
+if number==0:
+    st.dataframe(df)
+else:
+    st.dataframe(df.iloc[number1:number])
 
 
 option = st.selectbox(
