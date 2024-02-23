@@ -9,7 +9,11 @@ Este es un dataset del titanic
 """)
 
 df = pd.read_csv('train.csv')
-st.dataframe(df)
+
+st.write('Introduce el PassengerId')
+number = st.number_input("Insert a number", value=None, placeholder="Type a number...")
+st.write('The current index is ', number)
+st.dataframe(df.iloc[number-1:number])
 
 
 option = st.selectbox(
@@ -43,3 +47,5 @@ def his(option):
 
 
 his(option)
+
+
