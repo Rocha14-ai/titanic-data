@@ -13,7 +13,8 @@ df = pd.read_csv('train.csv')
 st.write('Introduce el PassengerId')
 number = st.number_input("Insert a number", value=None, placeholder="Type a number...")
 st.write('The current index is ', number)
-st.dataframe(df.iloc[number-1:number])
+number1=number-1
+st.dataframe(df.iloc[number1:number])
 
 
 option = st.selectbox(
