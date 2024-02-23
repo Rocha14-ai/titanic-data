@@ -17,7 +17,7 @@ number1=number-1
 if number==0:
     def highlight_survived(val):
         color = 'lightgreen' if val == 1 else 'white'
-    return f'background-color: {color}'
+        return f'background-color: {color}'
 
     styled_df = df.style.applymap(highlight_survived, subset=['Survived'])
 
