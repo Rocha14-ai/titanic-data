@@ -4,11 +4,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 st.title("""
-HOLA MUNDO
-hola hola hola
+TITANIC
+Este es un dataset del titanic 
 """)
-st.header("holi")
-st.markdown("*juan*")
 
 df = pd.read_csv('train.csv')
 st.dataframe(df)
@@ -21,9 +19,24 @@ option = st.selectbox(
 st.write('You selected:', option)
 
 def his(option):
-    arr = df[option]
-    fig, ax = plt.subplots()
-    ax.hist(arr, bins=20)
+    if option == 'Embarked'
+        embarked_mapping = {'S': 0, 'C': 1, 'Q': 2} 
+        df['Embarked'] = df['Embarked'].map(embarked_mapping)
+
+
+        df.dropna(subset=['Embarked'], inplace=True)
+
+
+        embarked_arr = df['Embarked']
+
+
+        fig, ax = plt.subplots()
+        ax.hist(embarked_arr, bins=20)
+
+    else:
+        arr = df[option]
+        fig, ax = plt.subplots()
+        ax.hist(arr, bins=20)
 
     return st.pyplot(fig)
 
