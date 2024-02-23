@@ -16,10 +16,10 @@ st.write('The current index is ', number)
 number1=number-1
 if number==0:
     def highlight_survived(val):
-        color = 'lightgreen' if val == 1 else 'white'
+        color = 'green' if val == 1 else 'red'
         return f'background-color: {color}'
 
-    styled_df = df.style.applymap(highlight_survived, subset=['Survived'])
+    styled_df = df.style.applymap(highlight_survived)
 
     st.dataframe(styled_df)
 else:
