@@ -23,10 +23,10 @@ if number==0:
                 )})
 else:
         if df['Survived']==1: 
-        st.dataframe(df.iloc[number1:number],    column_config={
-            "stars": st.column_config.NumberColumn(
-                format="%d ⭐",
-            )})
+            st.dataframe(df.iloc[number1:number],    column_config={
+                "stars": st.column_config.NumberColumn(
+                    format="%d ⭐",
+                )})
 
 
 
