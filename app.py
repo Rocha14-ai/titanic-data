@@ -9,22 +9,20 @@ Este es un dataset del titanic
 """)
 
 df = pd.read_csv('train.csv')
-number=1
-st.write('Introduce el PassengerId o usa 0 para ver a todos')
-number = int(st.number_input("Insert a number", value=None, placeholder="Type a number..."))
-st.write('The current index is ', number)
-number1=number-1
-if number==0:
 
-    def highlight_survived_row(row):
-        color = 'green' if row['Survived'] == 1 else 'red'
-        return [f'background-color: {color}'] * len(row)
 
-    styled_df = df.style.apply(highlight_survived_row, axis=1)
+def tabla(number=1):
+    if number==0:
 
-    st.dataframe(styled_df)
-else:
-    st.dataframe(df.iloc[number1:number])
+        def highlight_survived_row(row):
+            color = 'green' if row['Survived'] == 1 else 'red'
+            return [f'background-color: {color}'] * len(row)
+
+        styled_df = df.style.apply(highlight_survived_row, axis=1)
+
+        st.dataframe(styled_df)
+    else:
+        st.dataframe(df.iloc[number1:number])
 
 option = st.selectbox(
     'Elije de la columna',
@@ -55,6 +53,10 @@ def his(option):
 
     return st.pyplot(fig)
 
+st.write('Introduce el PassengerId o usa 0 para ver a todos')
+number = int(st.number_input("Insert a number", value=None, placeholder="Type a number..."))
+st.write('The current index is ', number)
+number1=number-1
 
 his(option)
 
