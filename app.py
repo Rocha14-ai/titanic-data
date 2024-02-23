@@ -27,11 +27,11 @@ def his(option):
         df.dropna(subset=['Embarked'], inplace=True)
 
 
-        embarked_arr = df['Embarked']
+        arr = df['Embarked']
 
 
         fig, ax = plt.subplots()
-        ax.hist(embarked_arr, bins=20)
+        ax.hist(arr, bins=20)
         print("S: 0, C: 1, Q: 2")
 
     else:
