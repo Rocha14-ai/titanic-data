@@ -15,11 +15,12 @@ number = int(st.number_input("Insert a number", value=None, placeholder="Type a 
 st.write('The current index is ', number)
 number1=number-1
 if number==0:
-    def highlight_survived(val):
-        color = 'green' if val == 1 else 'red'
-        return f'background-color: {color}'
 
-    styled_df = df.style.applymap(highlight_survived)
+    def highlight_survived_row(row):
+        color = 'lightgreen' if row['Survived'] == 1 else 'white'
+        return [f'background-color: {color}'] * len(row)
+
+    styled_df = df.style.apply(highlight_survived_row, axis=1)
 
     st.dataframe(styled_df)
 else:
