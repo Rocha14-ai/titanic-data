@@ -19,7 +19,7 @@ option = st.selectbox(
 st.write('You selected:', option)
 
 def his(option):
-    if option == 'Embarked'
+    if option == 'Embarked':
         embarked_mapping = {'S': 0, 'C': 1, 'Q': 2} 
         df['Embarked'] = df['Embarked'].map(embarked_mapping)
 
