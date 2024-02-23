@@ -53,7 +53,7 @@ def his(option):
         fig, ax = plt.subplots()
         ax.hist(arr, bins=20)
 
-    return st.pyplot(fig), max(arr), min(arr)
+    return st.pyplot(fig)
 
 
 his(option)
