@@ -13,9 +13,12 @@ st.markdown("*juan*")
 df = pd.read_csv('train.csv')
 st.dataframe(df)
 
-chart_data = pd.DataFrame(df, columns=["Survived"])
 
-st.bar_chart(chart_data)
+option = st.selectbox(
+    'Elije de la columna',
+    ('Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Embarked))
+
+st.write('You selected:', option)
 
 arr = df['Survived']
 fig, ax = plt.subplots()
