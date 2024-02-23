@@ -16,13 +16,10 @@ chart_data = pd.DataFrame(df, columns=["Survived"])
 
 st.bar_chart(chart_data)
 
+arr = df['Survived']
+fig, ax = plt.subplots()
+ax.hist(arr, bins=20)
 
-grp= df.groupby("Survived")
-fig, ax = plt.subplots(figsize=(8,6))
-for grp_name, grp_data in grp:
-  ax.hist(grp_data["Survived"], bins=2)
-
-ax.set_title('Survivors')
-ax.set_xlabel("0 no sobrevivientes, 1 sobrevivientes")
-ax.legend()
 st.pyplot(fig)
+
+
