@@ -9,7 +9,10 @@ Este es un dataset del titanic
 """)
 
 df = pd.read_csv('train.csv')
-
+st.write('Introduce el PassengerId o usa 0 para ver a todos')
+number = int(st.number_input("Insert a number", value=None, placeholder="Type a number..."))
+st.write('The current index is ', number)
+number1=number-1
 
 def tabla(number=1):
     if number==0:
@@ -24,11 +27,13 @@ def tabla(number=1):
     else:
         st.dataframe(df.iloc[number1:number])
 
+tabla(number)
 option = st.selectbox(
     'Elije de la columna',
     ('Survived', 'Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Embarked'))
 
 st.write('You selected:', option)
+
 
 def his(option):
     if option == 'Embarked':
@@ -53,10 +58,7 @@ def his(option):
 
     return st.pyplot(fig)
 
-st.write('Introduce el PassengerId o usa 0 para ver a todos')
-number = int(st.number_input("Insert a number", value=None, placeholder="Type a number..."))
-st.write('The current index is ', number)
-number1=number-1
+
 
 his(option)
 
