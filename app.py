@@ -15,7 +15,11 @@ number = int(st.number_input("Insert a number", value=None, placeholder="Type a 
 st.write('The current index is ', number)
 number1=number-1
 if number==0:
-    styled_df = df[df['Survived'] == 1].style.highlight_subset(subset=['Survived'], color='lightgreen')
+    def highlight_survived(val):
+    color = 'lightgreen' if val == 1 else 'white'
+    return f'background-color: {color}'
+
+    styled_df = df.style.applymap(highlight_survived, subset=['Survived'])
 
     st.dataframe(styled_df)
 else:
