@@ -10,7 +10,7 @@ Este es un dataset del titanic
 
 df = pd.read_csv('train.csv')
 st.write('Introduce el PassengerId o usa 0 para ver a todos')
-number = st.number_input("Insert a number", value=None, placeholder="Type a number...")
+number = int(st.number_input("Insert a number", value=None, placeholder="Type a number..."))
 
 if number is not None:
     st.write('The current index is ', number)
