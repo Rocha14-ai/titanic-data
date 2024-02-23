@@ -15,13 +15,19 @@ number = int(st.number_input("Insert a number", value=None, placeholder="Type a 
 st.write('The current index is ', number)
 number1=number-1
 if number==0:
-    if df['Survived']==1: 
-        st.dataframe(df,    column_config={
+    for i in df['Survived']:
+        if i==1: 
+            st.dataframe(df,    column_config={
+                "stars": st.column_config.NumberColumn(
+                    format="%d ⭐",
+                )})
+else:
+        if df['Survived']==1: 
+        st.dataframe(df.iloc[number1:number],    column_config={
             "stars": st.column_config.NumberColumn(
                 format="%d ⭐",
             )})
-else:
-    st.dataframe(df.iloc[number1:number])
+
 
 
 option = st.selectbox(
