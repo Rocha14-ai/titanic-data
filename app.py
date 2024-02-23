@@ -20,10 +20,12 @@ option = st.selectbox(
 
 st.write('You selected:', option)
 
-arr = df['Survived']
-fig, ax = plt.subplots()
-ax.hist(arr, bins=20)
+def his(option):
+    arr = df[option]
+    fig, ax = plt.subplots()
+    ax.hist(arr, bins=20)
 
-st.pyplot(fig)
+    return st.pyplot(fig)
 
 
+his(option)
